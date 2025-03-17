@@ -2,7 +2,7 @@
 </script>
 
 <template>
-  <div class="bg-[url('/static/dist/assets/qweq.png')] bg-no-repeat bg-cover h-screen bg-center relative">
+  <div class="bg-[url('/static/background.png')] bg-no-repeat bg-cover h-screen bg-center relative">
     <div class="absolute top-0 right-0 text-primary-text text-4xl p-4 flex gap-8">
       <div>
         <a href="/about">About</a>
