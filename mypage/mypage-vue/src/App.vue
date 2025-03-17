@@ -2,7 +2,7 @@
 </script>
 
 <template>
-  <div class="bg-[url(https://media.discordapp.net/attachments/834080864475676793/1130103402580410429/image.png?ex=67d80bcf&is=67d6ba4f&hm=2ed4a53ecaffad421f31d1c11d30b2d9a1b8d18c3bec115a5f42e9470038d6f5&=&format=webp&quality=lossless&width=1522&height=856)] bg-no-repeat bg-cover h-screen bg-center relative">
+  <div class="bg-[url('/static/dist/assets/qweq.png')] bg-no-repeat bg-cover h-screen bg-center relative">
     <div class="absolute top-0 right-0 text-primary-text text-4xl p-4 flex gap-8">
       <div>
         <a href="/about">About</a>

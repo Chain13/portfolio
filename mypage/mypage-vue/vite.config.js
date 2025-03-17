@@ -18,7 +18,7 @@ export default defineConfig({
     },
   },
   build: {
-    outDir: '../staticfiles/dist',
+    outDir: '../static/dist',
     assetsDir: 'assets',   // 🔹 Ensures assets are inside static/dist/assets/
     manifest: true,        // 🔹 Generates manifest.json for Django integration
     emptyOutDir: true,     // 🔹 Clears old files before building
