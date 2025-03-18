@@ -1,0 +1,82 @@
+{% extends "base.html" %} {% block content %}
+<div class=" ml-8 max-w-3/4">
+  <h1
+    class="text-5xl text-nowrap text-primary drop-shadow-[0_1.2px_1.2px_#303F9F] mb-4"
+  >
+    Resume
+  </h1>
+  <div class="text-tertiary">
+    <div class="flex items-center  text-secondary">
+        <div class="mr-4">
+          <i data-lucide="book-open"></i>
+        </div>
+    
+        <h2 class="text-3xl ">Education</h2>
+    
+      </div>
+      <p class="text-xl ml-8">
+        [Thammasat University] – Bachelor’s Degree in Computer Engineering (Ongoing)
+        [Expected Graduation Year 2026]
+      </p>
+    
+      <div class="flex items-center  text-secondary">
+        <div class="mr-4">
+          <i data-lucide="cpu" class=""></i>
+        </div>
+    
+        <h2 class="text-3xl">Skill & technologies</h2>
+      </div>
+      <p class="text-xl ml-8">
+        Programming Languages: Python, Java <br />
+        Frontend Development: Vue.js, Tailwind CSS <br />
+        Backend Development: Django <br />
+        Mobile Development: Jetpack Compose <br />
+        Version Control: Git <br />
+        Development Tools: VS Code, Android Studio, GitHub, GitLab <br />
+        Soft Skills: Problem-solving, Teamwork, Adaptability, Communication
+      </p>
+      <div class="flex items-center  text-secondary">
+        <div class="mr-4">
+          <i data-lucide="folder-kanban"></i>
+        </div>
+    
+        <h2 class="text-3xl">Projects</h2>
+      </div>
+      <p class="text-xl ml-8">
+        ChatUp – A social network project developed for the CN322 Computer Network Securities course. This platform facilitates secure communication between users.Technologies Used: Django, Bootstrap, Twilio <br>
+            <span class="ml-8">    - Implemented user authentication and messaging features.
+            </span>
+            <br>
+
+            <span class="ml-8">
+                - Integrated Twilio for secure SMS-based verification.
+    
+            </span>
+            <br>
+            <span class="ml-8">
+                - Designed a responsive UI using Bootstrap.
+    
+            </span>
+            <p class="text-xl ml-8">
+                HootyLibrary – A website for reading and writing books, designed to enhance user engagement in entertainment and learning. Users can freely create their own books and interact with readers to improve content.Technologies Used: Django
+                <br>
+                <span class="ml-8">
+                    - Developed a platform for aspiring writers to publish and share their books.
+    
+                </span><br>
+                <span class="ml-8">
+                    - Implemented user interaction features to facilitate feedback and improvements.
+    
+                </span><br>
+                <span class="ml-8">
+                    - Designed a structured database to manage book storage and user contributions.
+    
+                </span><br>
+            </p>
+    
+      </p>
+  </div>
+  
+</div>
+
+{% endblock %}
