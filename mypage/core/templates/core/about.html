@@ -1,147 +1,200 @@
 {% extends "base.html" %} {% block content %} {% load static %}
-  <h1
-    class="text-5xl text-nowrap text-primary drop-shadow-[0_1.2px_1.2px_#303F9F] mb-8 ml-8"
+<h1
+  class="text-5xl text-nowrap text-primary drop-shadow-[0_1.2px_1.2px_#303F9F] mb-8 ml-8"
+>
+  Chaiwat Klanruangsaeng
+</h1>
+<p class="text-3xl text-secondary max-w-3/4 ml-8 indent-8 text-pretty">
+  Hi, I'm Chaiwat Klanruangsaeng, a passionate Computer Engineer with expertise
+  in software development and modern web and mobile technologies.<span
+    class="bg-yellow-100"
+    >I specialize in Python, Java, Tailwind CSS, Vue.js, Jetpack Compose,
+    Django, and Git , allowing me to build efficient, scalable, and
+    user-friendly applications.</span
   >
-    Chaiwat Klanruangsaeng
-  </h1>
-  <p class="text-3xl text-secondary max-w-3/4 ml-8 indent-8 text-pretty">
-    Hi, I'm Chaiwat Klanruangsaeng, a passionate Computer Engineer with
-    expertise in software development and modern web and mobile
-    technologies.<span class="bg-yellow-100"
-      >I specialize in Python, Java, Tailwind CSS, Vue.js, Jetpack Compose,
-      Django, and Git , allowing me to build efficient, scalable, and
-      user-friendly applications.</span
+  <br />
+  With a strong problem-solving mindset, I enjoy tackling complex challenges and
+  continuously learning new technologies to stay ahead in the field. Whether
+  it's crafting sleek front-end interfaces or designing robust back-end systems,
+  I strive to create high-quality software solutions. Let's connect and build
+  something amazing together!
+</p>
+<h1 class="text-5xl text-primary font-bold m-8">Technical Skills</h1>
+<div class="flex flex-row flex-wrap justify-center gap-4 text-center rounded-lg">
+  <div class="flex flex-col p-8">
+    <h2 class="text-3xl font-bold">Frontend</h2>
+    <div
+      class="flex flex-row gap-4 my-4 items-center rounded-lg hover:bg-secondary hover:scale-125 p-2"
     >
-    <br>
-    With a strong problem-solving mindset, I enjoy tackling complex challenges
-    and continuously learning new technologies to stay ahead in the field.
-    Whether it's crafting sleek front-end interfaces or designing robust
-    back-end systems, I strive to create high-quality software solutions. Let's
-    connect and build something amazing together!
-  </p>
-  <h1 class="text-5xl text-primary font-bold m-8">
-    Technical Skills
-  </h1>
-  <div class="flex flex-row gap-4 text-center">
-    <div class="flex flex-col p-8 rounded-lg hover:bg-secondary">
-      <h2 class="text-3xl font-bold ">Frontend</h2>
-      <div class="flex flex-row gap-4 my-4 items-center">
-        <img
-          class="aspect-square "
-          src="{% static 'tailwindcss.png' %}"
-          alt="tailwindcss"
-          width="24"
-          height="24"
-        />
-        <h3 class="text-xl">Tailwind CSS</h3>
-      </div>
-      <div class="flex flex-row gap-4  my-4 items-center">
-        <img
-          class="aspect-square"
-          src="{% static 'css-3.png' %}"
-          alt=""
-          width="24"
-          height="24"
-        />
-        <h3 class="text-xl">CSS</h3>
-      </div>
-      <div class="flex flex-row gap-4  my-4 items-center">
-        <img
-          class="aspect-square"
-          src="{% static 'html.png' %}"
-          alt=""
-          width="24"
-          height="24"
-        />
-        <h3 class="text-xl">HTML</h3>
-      </div>
-      <div class="flex flex-row gap-4  my-4 items-center">
-        <img
-          class="aspect-square"
-          src="{% static 'javascript.png' %}"
-          alt=""
-          width="24"
-          height="24"
-        />
-        <h3 class="text-xl">JavaScript</h3>
-      </div>
-      <div class="flex flex-row gap-4  my-4 items-center">
-        <img
-          class="aspect-square"
-          src="{% static 'vuejs.png' %}"
-          alt=""
-          width="24"
-          height="24"
-        />
-        <h3 class="text-xl">Vue.js</h3>
-      </div>
+      <img
+        class="aspect-square"
+        src="{% static 'tailwindcss.png' %}"
+        alt="tailwindcss"
+        width="24"
+        height="24"
+      />
+      <h3 class="text-xl">Tailwind CSS</h3>
     </div>
-    <div class="flex flex-col p-8 hover:bg-secondary rounded-lg">
-      <h2 class="text-3xl font-bold mb-4">Backend</h2>
-      <div class="flex flex-row gap-4  my-4 items-center">
-        <img
+    <div
+      class="flex flex-row gap-4 my-4 items-center rounded-lg hover:bg-secondary hover:scale-125 p-2"
+    >
+      <img
+        class="aspect-square"
+        src="{% static 'css-3.png' %}"
+        alt="css"
+        width="24"
+        height="24"
+      />
+      <h3 class="text-xl">CSS</h3>
+    </div>
+    <div
+      class="flex flex-row gap-4 my-4 items-center rounded-lg hover:bg-secondary hover:scale-125 p-2"
+    >
+      <img
+        class="aspect-square"
+        src="{% static 'html.png' %}"
+        alt="html"
+        width="24"
+        height="24"
+      />
+      <h3 class="text-xl">HTML</h3>
+    </div>
+    <div
+      class="flex flex-row gap-4 my-4 items-center rounded-lg hover:bg-secondary hover:scale-125 p-2"
+    >
+      <img
+        class="aspect-square"
+        src="{% static 'javascript.png' %}"
+        alt="javascript"
+        width="24"
+        height="24"
+      />
+      <h3 class="text-xl">JavaScript</h3>
+    </div>
+    <div
+      class="flex flex-row gap-4 my-4 items-center rounded-lg hover:bg-secondary hover:scale-125 p-2"
+    >
+      <img
+        class="aspect-square"
+        src="{% static 'vuejs.png' %}"
+        alt="vuejs"
+        width="24"
+        height="24"
+      />
+      <h3 class="text-xl">Vue.js</h3>
+    </div>
+    <div
+      class="flex flex-row gap-4 my-4 items-center rounded-lg hover:bg-secondary hover:scale-125 p-2"
+    >
+      <img
+        class="aspect-square"
+        src="{% static 'jquery.png' %}"
+        alt="jQuery"
+        width="24"
+        height="24"
+      />
+      <h3 class="text-xl">jQuery</h3>
+    </div>
+  </div>
+  <div class="flex flex-col p-8 rounded-lg">
+    <h2 class="text-3xl font-bold mb-4">Backend</h2>
+    <div
+      class="flex flex-row gap-4 my-4 items-center rounded-lg hover:bg-secondary hover:scale-125 p-2"
+    >
+      <img
         class="aspect-square"
         src="{% static 'djangoproject.png' %}"
-        alt=""
+        alt="django"
         width="24"
         height="24"
       />
       <h3 class="text-xl">Django</h3>
-
-      </div>
-      <div class="flex flex-row gap-4  my-4 items-center">
-        <img
+    </div>
+    <div
+      class="flex flex-row gap-4 my-4 items-center rounded-lg hover:bg-secondary hover:scale-125 p-2"
+    >
+      <img
         class="aspect-square"
         src="{% static 'python.png' %}"
-        alt=""
+        alt="python"
         width="24"
         height="24"
       />
       <h3 class="text-xl">Python</h3>
-
-      </div>
-      <div class="flex flex-row gap-4  my-4 items-center">
-        <img
+    </div>
+    <div
+      class="flex flex-row gap-4 my-4 items-center rounded-lg hover:bg-secondary hover:scale-125 p-2"
+    >
+      <img
         class="aspect-square"
         src="{% static 'java.png' %}"
-        alt=""
+        alt="java"
         width="24"
         height="24"
       />
       <h3 class="text-xl">Java</h3>
-
-      </div>
     </div>
-    <div class="flex flex-col p-8 hover:bg-secondary rounded-lg">
-      <h2 class="text-3xl font-bold mb-4">DevOps/Tools</h2>
-      <div class="flex flex-row gap-4  my-4 items-center">
-        <img
+  </div>
+  <div class="flex flex-col p-8 rounded-lg">
+    <h2 class="text-3xl font-bold mb-4">DevOps/Tools</h2>
+    <div
+      class="flex flex-row gap-4 my-4 items-center rounded-lg hover:bg-secondary hover:scale-125 p-2"
+    >
+      <img
         class="aspect-square"
         src="{% static 'github.png' %}"
-        alt=""
+        alt="github"
         width="24"
         height="24"
       />
       <h3 class="text-xl">Git</h3>
-
-
-      </div>
     </div>
-    <div class="flex flex-col p-8 hover:bg-secondary rounded-lg">
-      <h2 class="text-3xl font-bold mb-4">Mobile</h2>
-      <div class="flex flex-row gap-4  my-4 items-center">
-        <img
+  </div>
+  <div class="flex flex-col p-8 rounded-lg">
+    <h2 class="text-3xl font-bold mb-4">Mobile</h2>
+    <div
+      class="flex flex-row gap-4 my-4 items-center rounded-lg hover:bg-secondary hover:scale-125 p-2"
+    >
+      <img
         class="aspect-square"
         src="{% static 'android.png' %}"
-        alt=""
+        alt="android"
         width="24"
         height="24"
       />
       <h3 class="text-xl">Android/Jetpack Compose</h3>
-
-
-
-      </div>
     </div>
   </div>
+  <div class="flex flex-col p-8 rounded-lg">
+    <h2 class="text-3xl font-bold mb-4">Game</h2>
+    <div
+      class="flex flex-row gap-4 my-4 items-center rounded-lg hover:bg-secondary hover:scale-125 p-2"
+    >
+      <img
+        class="aspect-square"
+        src="{% static 'unrealengine.png' %}"
+        alt="unreal engine"
+        width="24"
+        height="24"
+      />
+      <h3 class="text-xl">Unreal Engine 5</h3>
+    </div>
+  </div>
+  <div class="flex flex-col p-8 rounded-lg">
+    <h2 class="text-3xl font-bold mb-4">3D</h2>
+    <div
+      class="flex flex-row gap-4 my-4 items-center rounded-lg hover:bg-secondary hover:scale-125 p-2"
+    >
+      <img
+        class="aspect-square"
+        src="{% static 'blender.png' %}"
+        alt="blender"
+        width="24"
+        height="24"
+      />
+      <h3 class="text-xl">Blender</h3>
+    </div>
+  </div>
+
+</div>
 {% endblock %}
