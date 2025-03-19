@@ -1,37 +1,40 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
-    <link rel="stylesheet" href="{% static 'css/base.css' %}">
-</head>
-<body class="bg-surface">
-    <div class="grid  h-screen bg-center relative text-on-surface">
-        <div class="text-primary text-4xl p-4 flex gap-8 justify-self-end">
-          <div>
-            <a href="{% url 'about' %}">About</a>
-          </div>
-          <!-- <div>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}" />
+  </head>
+  <body class="bg-surface">
+    <div class="grid h-full text-on-surface">
+      <div class="text-primary text-4xl p-4 flex gap-8 justify-self-end">
+        <div>
+          <a href="{% url 'about' %}">About</a>
+        </div>
+        <!-- <div>
             <a href="{% url 'contact' %}">Contact</a>
           </div> -->
-          <div>
-            <a href="{% url 'resume' %}">Resume</a>
-          </div>
-          <!-- <div>
+        <div>
+          <a href="{% url 'resume' %}">Resume</a>
+        </div>
+        <!-- <div>
             <a href="{% url 'blog' %}">Blog</a>
           </div> -->
-          <!-- <div>
+        <!-- <div>
             <a href="{% url 'portfolio' %}">Portfolio</a>
           </div> -->
-        </div>
-        {% block content %}
-        {% endblock %}
       </div>
-        <script src="https://unpkg.com/lucide@latest"></script>
-  <script>
-    lucide.createIcons();
-  </script>
-</body>
+
+      <div class="grid text-on-surface justify-items-center">
+        {% block content %} {% endblock %}
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+      lucide.createIcons();
+    </script>
+  </body>
 </html>
