@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
     <link rel="stylesheet" href="{% static 'css/base.css' %}" />
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body class="bg-surface">
     <div class="grid h-full text-on-surface">
@@ -26,7 +27,46 @@
             <a href="{% url 'portfolio' %}">Portfolio</a>
           </div> -->
       </div>
-
+      <div class="fixed bottom-0 left-0 m-4">
+        <div class="flex flex-col-reverse gap-2">
+          <a href="">
+            <img
+              class="aspect-square"
+              src="{% static 'assets/x.png' %}"
+              alt=""
+              width="48"
+              height="48"
+          /></a>
+          <a href=""><img
+            class="aspect-square"
+            src="{% static 'assets/instagram.png' %}"
+            alt=""
+            width="48"
+            height="48"
+        /></a>
+          <a href=""><img
+            class="aspect-square"
+            src="{% static 'assets/linkedin.png' %}"
+            alt=""
+            width="48"
+            height="48"
+        /></a>
+        <a href=""><img
+          class="aspect-square"
+          src="{% static 'assets/youtube.png' %}"
+          alt=""
+          width="48"
+          height="48"
+      /></a>
+      <a href=""><img
+        class="aspect-square"
+        src="{% static 'assets/github.png' %}"
+        alt=""
+        width="48"
+        height="48"
+    /></a>
+        </div>
+      </div>
       <div class="grid text-on-surface justify-items-center">
         {% block content %} {% endblock %}
       </div>
