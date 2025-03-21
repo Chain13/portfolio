@@ -138,3 +138,6 @@ GitHub.sublime-settings
 .history
 
 *.crt
+ca.pem
+
+.env.*

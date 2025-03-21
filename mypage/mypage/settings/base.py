@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 from pathlib import Path
 import os
+import dj_database_url
 from dotenv import load_dotenv
 load_dotenv()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -80,14 +81,19 @@ WSGI_APPLICATION = 'mypage.wsgi.application'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 DATABASES = {
-	'default': {
-		'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': os.getenv('POSTGRES_DATABASE'),
-		'USER': os.getenv('POSTGRES_USER'),
-		'PASSWORD': os.getenv('POSTGRES_PASSWORD'),
-		'HOST': os.getenv('POSTGRES_HOST'),
-        'PORT': os.getenv('POSTGRES_PORT'),
-	}
+	# 'default': {
+	# 	'ENGINE': 'django.db.backends.postgresql_psycopg2',
+    #     'NAME': os.getenv('POSTGRES_DATABASE'),
+	# 	'USER': os.getenv('POSTGRES_USER'),
+	# 	'PASSWORD': os.getenv('POSTGRES_PASSWORD'),
+	# 	'HOST': os.getenv('POSTGRES_HOST'),
+    #     'PORT': os.getenv('POSTGRES_PORT'),
+    #     'OPTIONS': {
+    #         'sslmode': 'require',
+
+    #     },
+	# },
+    'default': dj_database_url.parse(os.environ.get('POSTGRES_URL'))
 }
 
 
