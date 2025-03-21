@@ -1,0 +1,15 @@
+{% extends "base.html" %} 
+{% block content %}
+<h1 class="text-5xl text-nowrap text-primary drop-shadow-[0_1.2px_1.2px_#303F9F] mb-4">Blog</h1>
+<div class="flex flex-col max-w-3/4 min-w-3xl">
+    {% for blog in blogs %}
+    <a href="{% url 'blog_detail' blog.pk %}">
+    {% include "core/blog_item.html" with blog=blog %}
+    </a>
+    
+
+{% endfor %}
+</div>
+
+
+{% endblock %}

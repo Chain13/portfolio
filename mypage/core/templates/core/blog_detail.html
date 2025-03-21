@@ -1,0 +1,44 @@
+{% extends "base.html" %} 
+{% load static %}
+{% load embed_video_tags %}
+{% block header %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>
+<script>hljs.highlightAll();</script>
+{% endblock %}
+{% block content %}
+<h1 class="text-5xl text-nowrap text-primary drop-shadow-[0_1.2px_1.2px_#303F9F] mb-4">{{blog.title}}</h1>
+<div class=" flex flex-row items-center">
+    <img
+      src="{{blog.created_by.profile.profile_image.url}}"
+      alt="{{blog.create_by}} profile image"
+      width="24"
+      height="24"
+      class="mx-2"
+    />
+    <p>{{blog.created_by}}</p>
+  </div>
+{% for content in contents %}
+    
+<div class="flex justify-center my-8  ">
+    {% if content.content_type == 'text' %}
+    <p class="text-3xl text-secondary max-w-3/4 ml-8 indent-8 text-pretty break-normal">{{content.text}}</p>
+    {% endif %}
+    {% if content.content_type == 'image' %}
+    <img src="{{ content.image.url }}" alt="">
+    {% endif %}
+    {% if content.content_type == 'video' %}
+    {% video content.video 'medium' %}
+    {% endif %}
+    {% if content.content_type == 'code' %}
+    <pre class="p-2 "><code class="language-{{content.code_language}}">{{content.code}}</code></pre>
+
+    {% endif %}
+    {% if content.content_type == 'separator' %}
+        <hr class="w-48 h-1 mx-auto my-4 bg-on-surface border-on-surface border-4 rounded-sm "> 
+    {% endif %}
+</div>
+{% endfor %}
+
+{% endblock %}

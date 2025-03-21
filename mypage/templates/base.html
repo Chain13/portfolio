@@ -7,6 +7,9 @@
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
     <link rel="stylesheet" href="{% static 'css/base.css' %}" />
     <script src="https://cdn.tailwindcss.com"></script>
+    {% block header %}
+    {% endblock %}
+    <title>{% block title %} {% endblock %}</title>
   </head>
   <body class="bg-surface">
     <div class="grid h-full text-on-surface">
@@ -20,9 +23,9 @@
         <div>
           <a href="{% url 'resume' %}">Resume</a>
         </div>
-        <!-- <div>
+        <div>
             <a href="{% url 'blog' %}">Blog</a>
-          </div> -->
+          </div>
         <!-- <div>
             <a href="{% url 'portfolio' %}">Portfolio</a>
           </div> -->

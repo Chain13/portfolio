@@ -1,29 +1,24 @@
 {% extends "base.html" %} {% block content %}
-<div class="grid text-on-surface justify-items-center">
-  <h1
-    class="text-5xl text-nowrap text-primary drop-shadow-[0_1.2px_1.2px_#303F9F] mb-4"
-  >
-    Resume
-  </h1>
-  <div class="grid text-tertiary max-w-3/4">
-    <div class="flex items-center  text-secondary">
-        <div class="mr-4">
-          <i data-lucide="book-open"></i>
-        </div>
-    
-        <h2 class="text-3xl ">Education</h2>
-    
+<h1
+  class="text-5xl text-nowrap text-primary drop-shadow-[0_1.2px_1.2px_#303F9F] mb-4"
+>
+  Resume
+</h1>
+<div class="flex flex-col text-tertiary max-w-3/4">
+  <div class="flex flex-col items-start text-secondary">
+    <div class="flex flex-col">
+      <div class="flex flex-row items-center gap-4">
+        <i data-lucide="cpu"></i>
+        <h2 class="text-3xl">Education</h2>
       </div>
       <p class="text-xl ml-8">
-        [Thammasat University] – Bachelor’s Degree in Computer Engineering (Ongoing)
-        [Expected Graduation Year 2026]
+        [Thammasat University] – Bachelor’s Degree in Computer Engineering
+        (Ongoing) [Expected Graduation Year 2026]
       </p>
-    
-      <div class="flex items-center  text-secondary">
-        <div class="mr-4">
-          <i data-lucide="cpu" class=""></i>
-        </div>
-    
+    </div>
+    <div class="flex flex-col">
+      <div class="flex flex-row items-center gap-4">
+        <i data-lucide="book-open"></i>
         <h2 class="text-3xl">Skill & technologies</h2>
       </div>
       <p class="text-xl ml-8">
@@ -33,51 +28,61 @@
         Mobile Development: Jetpack Compose <br />
         Version Control: Git <br />
         Development Tools: VS Code, Android Studio, GitHub, GitLab <br />
-        Soft Skills: Problem-solving, Teamwork, Adaptability, Communication <br>
+        Soft Skills: Problem-solving, Teamwork, Adaptability, Communication
+        <br />
         Typing Speed: 70-80 WPM
       </p>
-      <div class="flex items-center  text-secondary">
-        <div class="mr-4">
-          <i data-lucide="folder-kanban"></i>
-        </div>
-    
+    </div>
+    <div class="flex flex-col">
+      <div class="flex flex-row items-center gap-4">
+        <i data-lucide="folder-kanban"></i>
         <h2 class="text-3xl">Projects</h2>
       </div>
       <p class="text-xl ml-8">
-        ChatUp – A social network project developed for the CN322 Computer Network Securities course. This platform facilitates secure communication between users.Technologies Used: Django, Bootstrap, Twilio <br>
-            <span class="ml-8">    - Implemented user authentication and messaging features.
-            </span>
-            <br>
+        ChatUp – A social network project developed for the CN322 Computer
+        Network Securities course. This platform facilitates secure
+        communication between users.Technologies Used: Django, Bootstrap, Twilio
+        <br />
+        <span class="ml-8">
+          - Implemented user authentication and messaging features.
+        </span>
+        <br />
 
-            <span class="ml-8">
-                - Integrated Twilio for secure SMS-based verification.
-    
-            </span>
-            <br>
-            <span class="ml-8">
-                - Designed a responsive UI using Bootstrap.
-    
-            </span>
-            <p class="text-xl ml-8">
-                HootyLibrary – A website for reading and writing books, designed to enhance user engagement in entertainment and learning. Users can freely create their own books and interact with readers to improve content.Technologies Used: Django
-                <br>
-                <span class="ml-8">
-                    - Developed a platform for aspiring writers to publish and share their books.
-    
-                </span><br>
-                <span class="ml-8">
-                    - Implemented user interaction features to facilitate feedback and improvements.
-    
-                </span><br>
-                <span class="ml-8">
-                    - Designed a structured database to manage book storage and user contributions.
-    
-                </span><br>
-            </p>
-    
+        <span class="ml-8">
+          - Integrated Twilio for secure SMS-based verification.
+        </span>
+        <br />
+        <span class="ml-8"> - Designed a responsive UI using Bootstrap. </span>
       </p>
-  </div>
-  
-</div>
 
-{% endblock %}
+      <p class="text-xl ml-8">
+        HootyLibrary – A website for reading and writing books, designed to
+        enhance user engagement in entertainment and learning. Users can freely
+        create their own books and interact with readers to improve
+        content.Technologies Used: Django
+        <br />
+        <span class="ml-8">
+          - Developed a platform for aspiring writers to publish and share their
+          books. </span
+        ><br />
+        <span class="ml-8">
+          - Implemented user interaction features to facilitate feedback and
+          improvements. </span
+        ><br />
+        <span class="ml-8">
+          - Designed a structured database to manage book storage and user
+          contributions. </span
+        ><br />
+      </p>
+    </div>
+    <div class="flex flex-col">
+      <div class="flex flex-row items-center gap-4">
+        <i data-lucide="briefcase-business"></i>
+        <h2 class="text-3xl">Work Experience</h2>
+      </div>
+      <p class="text-xl ml-8"></p>
+    </div>
+  </div>
+
+  {% endblock %}
+</div>
