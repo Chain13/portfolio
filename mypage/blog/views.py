@@ -10,3 +10,7 @@ class BlogListView(ListView):
 class BlogDetailView(DetailView):
     model = Blog
     template_name = 'blog/blog_detail.html'
+class BlogCreateView(CreateView):
+    model = Blog
+    template_name = 'blog/blog_create.html'
+    fields = ['title', 'content']
