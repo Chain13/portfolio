@@ -4,7 +4,7 @@
 <div class="flex flex-col max-w-3/4 min-w-3xl">
     {% for blog in blogs %}
     <a href="{% url 'blog_detail' blog.pk %}">
-    {% include "core/blog_item.html" with blog=blog %}
+    {% include "blog/blog_item.html" with blog=blog %}
     </a>
     
 

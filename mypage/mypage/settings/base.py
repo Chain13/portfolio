@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'core',
-    'embed_video'
+    'blog',
+
 ]
 
 MIDDLEWARE = [
@@ -93,7 +94,10 @@ DATABASES = {
 
     #     },
 	# },
-    'default': dj_database_url.parse(os.environ.get('POSTGRES_URL'))
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3",
+    }
 }
 
 
