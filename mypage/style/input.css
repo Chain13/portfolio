@@ -39,8 +39,35 @@
     --color-outline: #6f7979;
     --color-outline-variant: #bec8c8;
 }
-@layer components {
-	.title { @apply text-6xl font-bold }
-	.subtitle { @apply text-4xl font-semibold }
-	.subsubtitle { @apply text-lg font-medium italic }
+.markdown-content  h1 {
+    @apply text-5xl;
+}
+
+.markdown-content  h2 {
+    @apply text-4xl;
+}
+.markdown-content  h3 {
+    @apply text-3xl;
+}
+.markdown-content  h4 {
+    @apply text-2xl;
+}
+.markdown-content  h5 {
+    @apply text-xl;
+}
+.markdown-content  h6 {
+    @apply text-lg;
+}
+.markdown-content blockquote {
+    @apply m-2 p-4 border-s-4 border-gray-300 bg-gray-50 dark:border-gray-500 dark:bg-gray-800;
+}
+.markdown-content pre {
+    @apply bg-gray-50 rounded-lg dark:bg-gray-700 p-4 h-64;
+}
+.markdown-content code {
+    @apply text-sm text-gray-500 dark:text-gray-400 whitespace-pre;
+}
+
+.markdown-content a {
+    @apply font-medium text-blue-600 underline dark:text-blue-500 hover:no-underline
 }

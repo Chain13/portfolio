@@ -16,12 +16,8 @@
   />
   <p>{{blog.created_by}}</p>
 </div>
-
 <div
-  class="my-8 max-w-3/4 [&_h1]:text-5xl [&_h1]:font-semibold [&_h1]:my-4 [&_h2]:text-4xl [&_h2]:my-2 [&_h3]:text-3xl [&_h4]:text-2xl [&_h5]:text-xl [&_h6]:text-lg [&_blockquote]:p-4 [&_blockquote]:border-s-4 [&_blockquote]:border-gray-300 [&_blockquote]:bg-gray-50 [&_blockquote]:dark:border-gray-500 [&_blockquote]:dark:bg-gray-800 [&_code]:text-sm [&_code]:text-gray-500 [&_code]:dark:text-gray-400 [&_code]:whitespace-pre
-  [&_ul]:ps-5 [&_ul]:mt-2 [&_ul]:max-w-md [&_ul]:space-y-1 [&_ul]:text-gray-500 [&_ul]:list-disc [&_ul]:list-inside [&_ul]:dark:text-gray-400
-  [&_ol]:ps-5 [&_ol]:mt-2 [&_ol]:space-y-1 [&_ol]:list-decimal [&_ol]:list-inside
-  "
+  class="my-8 max-w-3/4 markdown-content" 
 >
   <!-- content -->
   {{blog.content|convert_markdown|safe}}
