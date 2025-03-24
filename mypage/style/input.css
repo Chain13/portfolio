@@ -39,3 +39,8 @@
     --color-outline: #6f7979;
     --color-outline-variant: #bec8c8;
 }
+@layer components {
+	.title { @apply text-6xl font-bold }
+	.subtitle { @apply text-4xl font-semibold }
+	.subsubtitle { @apply text-lg font-medium italic }
+}
