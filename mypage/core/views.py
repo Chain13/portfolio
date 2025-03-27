@@ -21,7 +21,6 @@ class SignInView(View):
     template_name = 'core/signin.html'
     
     def get(self, request):
-        print(request.user, request.user.is_authenticated)
         if request.user.is_authenticated:
             return redirect('home')
         return render(request, self.template_name)
@@ -30,12 +29,11 @@ class SignInView(View):
         username = request.POST.get('username')
         password = request.POST.get('password')
         user = authenticate(username=username, password=password)
-        
+        next = request.GET.get('next')
         if user is not None:
             login(request=request, user=user)
-            return redirect('home')
-        
-        return redirect('signin')
+            return redirect(next or 'home')
+        return redirect(next or 'signin')
 class SignupView(View):
     template_name = 'core/signup.html'
     def get(self, request):
@@ -46,11 +44,11 @@ class SignupView(View):
         username = request.POST.get('username')
         password = request.POST.get('password')
         confirm_password = request.POST.get('confirm_password')
-        print(username, password, confirm_password)
+        next = request.GET.get('next')
         if password == confirm_password:
             user = authenticate(username=username, password=password)
             if user is None:
                 user = User.objects.create_user(username=username, password=password)
                 login(request=request, user=user)
-                return redirect('home')
-        return redirect('signup')
+            return redirect(next or 'home')
+        return redirect(next or 'signup')

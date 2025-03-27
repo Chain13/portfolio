@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView, CreateView
 from .models import Blog
+from django.contrib.auth.mixins import LoginRequiredMixin
 # Create your views here.
 class BlogListView(ListView):
     model = Blog
@@ -10,7 +11,10 @@ class BlogListView(ListView):
 class BlogDetailView(DetailView):
     model = Blog
     template_name = 'blog/blog_detail.html'
-class BlogCreateView(CreateView):
+class BlogCreateView(LoginRequiredMixin, CreateView):
     model = Blog
     template_name = 'blog/blog_create.html'
     fields = ['title', 'content']
+    def form_valid(self, form):
+        form.instance.created_by = self.request.user
+        return super(BlogCreateView, self).form_valid(form)

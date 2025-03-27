@@ -1,8 +1,17 @@
 {% extends 'base.html' %}
 {% block content %}
 <h1 class="text-3xl font-bold mb-4">Create Blog</h1>
-<form method="post" enctype="multipart/form-data">
-    {% csrf_token %}
-    {{ form.as_p }}
-</form>
+    <form method="post" enctype="multipart/form-data" class="w-3/4 max-w-4xl">
+        {% csrf_token %}
+        <div class="mb-4">
+            <label class="block text-primary">Title</label>
+            <input type="text" class="w-full px-4 py-2 mt-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary text-primary" placeholder="Title" name="title" required>
+        </div>
+        <div class="mb-4">
+            <label class="block text-primary">Content</label>
+            <textarea name="content" id="" rows=16 class=" w-full px-4 py-2 mt-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary text-primary" placeholder="Enter your content"></textarea>
+        </div>
+        <button class="w-full bg-primary text-white  py-2 rounded-lg hover:bg-secondary" value="submit">Submit</button>
+    </form>
+
 {% endblock %}

@@ -12,7 +12,7 @@
         <!-- Left Section -->
         <div class="w-full md:w-1/2 p-8 ">
             <h2 class="text-2xl font-semibold mb-6 text-center text-primary">Create an account</h2>
-            <form class="mt-6" action="{% url 'signup' %}" method="POST">
+            <form class="mt-6" action="{% url 'signup' %}?next={{request.GET.next}}" method="POST">
                 {% csrf_token %}
                 <div class="mb-4">
                     <label class="block text-primary ">Name</label>
