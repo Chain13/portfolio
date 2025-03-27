@@ -59,6 +59,7 @@
     --color-primary: #00696b;
     --color-on-primary: #ffffff;
     --color-primary-container: #9cf1f2;
+    --color-on-primary-container: #004f51;
     --color-secondary: #4a6363;
     --color-tertiary: #4c5f7c;
     --color-surface: #f4fbfa;
@@ -405,6 +406,9 @@
   .w-0 {
     width: calc(var(--spacing) * 0);
   }
+  .w-1 {
+    width: calc(var(--spacing) * 1);
+  }
   .w-1\/2 {
     width: calc(1/2 * 100%);
   }
@@ -419,6 +423,9 @@
   }
   .w-full {
     width: 100%;
+  }
+  .max-w-3 {
+    max-width: calc(var(--spacing) * 3);
   }
   .max-w-3\/4 {
     max-width: calc(3/4 * 100%);
@@ -449,6 +456,9 @@
   }
   .grow {
     flex-grow: 1;
+  }
+  .border-collapse {
+    border-collapse: collapse;
   }
   .transform {
     transform: var(--tw-rotate-x) var(--tw-rotate-y) var(--tw-rotate-z) var(--tw-skew-x) var(--tw-skew-y);
@@ -530,6 +540,15 @@
   }
   .bg-gray-100 {
     background-color: var(--color-gray-100);
+  }
+  .bg-on-primary {
+    background-color: var(--color-on-primary);
+  }
+  .bg-on-primary-container {
+    background-color: var(--color-on-primary-container);
+  }
+  .bg-primary {
+    background-color: var(--color-primary);
   }
   .bg-primary-container {
     background-color: var(--color-primary-container);
@@ -641,6 +660,9 @@
   }
   .text-gray-800 {
     color: var(--color-gray-800);
+  }
+  .text-on-primary {
+    color: var(--color-on-primary);
   }
   .text-on-surface {
     color: var(--color-on-surface);
