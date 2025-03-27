@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login,logout
 from django.views import View
 from django.contrib.auth import get_user_model
 User = get_user_model()
@@ -52,3 +52,7 @@ class SignupView(View):
                 login(request=request, user=user)
             return redirect(next or 'home')
         return redirect(next or 'signup')
+class SignOutView(View):
+    def get(self, request):
+        logout(request)
+        return redirect('home')

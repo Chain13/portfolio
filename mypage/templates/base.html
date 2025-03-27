@@ -6,14 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
     <link rel="stylesheet" href="{% static 'css/base.css' %}" />
-    {% block header %}
-    {% endblock %}
+    {% block header %} {% endblock %}
     <title>{% block title %} {% endblock %}</title>
   </head>
   <body class="bg-surface">
     <div class="grid h-full text-on-surface">
       <div class="flex justify-between p-4">
-        <div class="text-primary text-4xl  flex gap-8">
+        <div class="text-primary text-4xl flex gap-8">
           <div>
             <a href="{% url 'about' %}">About</a>
           </div>
@@ -24,15 +23,31 @@
             <a href="{% url 'resume' %}">Resume</a>
           </div>
           <div>
-              <a href="{% url 'blog' %}">Blog</a>
-            </div>
+            <a href="{% url 'blog' %}">Blog</a>
+          </div>
           <!-- <div>
               <a href="{% url 'portfolio' %}">Portfolio</a>
             </div> -->
         </div>
-        <div class="text-primary text-4xl p-4 flex flex-row-reverse gap-8 items-center">
-          <div>
-            <a href="{% url 'signin' %}"><i data-lucide="circle-user-round"></i></a>
+        <div
+          class="text-primary text-4xl p-4 flex flex-row-reverse gap-8 items-center"
+        >
+          <div class="relative">
+            <button class="cursor-pointer" onclick="toggleDropdown()"><i data-lucide="circle-user-round"></i></button>
+            <div class="absolute right-0 hidden" id="dropdown-menu">
+              <ul class="py-2 text-sm text-primary ">
+                {% if not user.is_authenticated %}
+                <li>
+                  <a href="{% url 'signin' %}">Signin</a>
+                </li>
+                {% else %}
+                <a href="{% url 'signout' %}">Singout</a>
+                {% endif %}
+
+              </ul>
+
+
+            </div>
           </div>
           <div>
             <a href="{% url 'blog_create' %}"><i data-lucide="pencil"></i></a>
@@ -50,34 +65,38 @@
               width="48"
               height="48"
           /></a>
-          <a href=""><img
-            class="aspect-square"
-            src="{% static 'assets/instagram.png' %}"
-            alt=""
-            width="48"
-            height="48"
-        /></a>
-          <a href=""><img
-            class="aspect-square"
-            src="{% static 'assets/linkedin.png' %}"
-            alt=""
-            width="48"
-            height="48"
-        /></a>
-        <a href=""><img
-          class="aspect-square"
-          src="{% static 'assets/youtube.png' %}"
-          alt=""
-          width="48"
-          height="48"
-      /></a>
-      <a href=""><img
-        class="aspect-square"
-        src="{% static 'assets/github.png' %}"
-        alt=""
-        width="48"
-        height="48"
-    /></a>
+          <a href=""
+            ><img
+              class="aspect-square"
+              src="{% static 'assets/instagram.png' %}"
+              alt=""
+              width="48"
+              height="48"
+          /></a>
+          <a href=""
+            ><img
+              class="aspect-square"
+              src="{% static 'assets/linkedin.png' %}"
+              alt=""
+              width="48"
+              height="48"
+          /></a>
+          <a href=""
+            ><img
+              class="aspect-square"
+              src="{% static 'assets/youtube.png' %}"
+              alt=""
+              width="48"
+              height="48"
+          /></a>
+          <a href=""
+            ><img
+              class="aspect-square"
+              src="{% static 'assets/github.png' %}"
+              alt=""
+              width="48"
+              height="48"
+          /></a>
         </div>
       </div>
       <div class="grid text-on-surface justify-items-center">
@@ -88,6 +107,12 @@
     <script src="https://unpkg.com/lucide@latest"></script>
     <script>
       lucide.createIcons();
+    </script>
+    <script>
+      function toggleDropdown() {
+        var dropdown = document.getElementById("dropdown-menu");
+        dropdown.classList.toggle("hidden");
+      }
     </script>
   </body>
 </html>
