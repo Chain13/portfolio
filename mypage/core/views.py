@@ -28,10 +28,10 @@ class SignInView(View):
     
     def post(self, request):
         form = SignInForm(request.POST)
+        next = request.GET.get('next')
         if form.is_valid():
             username = form.cleaned_data.get('username')
             password = form.cleaned_data.get('password')
-            next = request.GET.get('next')
 
             user = authenticate(username=username, password=password)
             if user is not None:
@@ -43,20 +43,25 @@ class SignInView(View):
 class SignupView(View):
     template_name = 'core/signup.html'
     def get(self, request):
+
         if request.user.is_authenticated:
             return redirect('home')
         return render(request=request,template_name=self.template_name, context={'form': SignUpForm()})
     def post(self, request):
-        username = request.POST.get('username')
-        password = request.POST.get('password')
-        confirm_password = request.POST.get('confirm_password')
+        form = SignUpForm(request.POST)
         next = request.GET.get('next')
-        if password == confirm_password:
-            user = authenticate(username=username, password=password)
-            if user is None:
-                user = User.objects.create_user(username=username, password=password)
+
+        if form.is_valid():
+            username = form.cleaned_data.get('username')
+            email = form.cleaned_data.get('email')
+            password = form.cleaned_data.get('password')
+            confirm_password = form.cleaned_data.get('confirm_password')
+            terms_and_conditions = form.cleaned_data.get('terms_and_conditions')
+            if password == confirm_password and terms_and_conditions:
+                user = User.objects.create_user(username=username, password=password, email=email)
                 login(request=request, user=user)
             return redirect(next or 'home')
+    
         return redirect(next or 'signup')
 class SignOutView(View):
     def get(self, request):

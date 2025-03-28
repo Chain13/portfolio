@@ -19,14 +19,15 @@
                 {% csrf_token %}
 
                 {% for field in form %}
-                <label for="{{ field.id_for_label }}" class="block mt-3 text-primary">{{ field.label }}</label>
                 
                 {% if field.field.widget.input_type == "text" or field.field.widget.input_type == "password" %}
+                <label for="{{ field.id_for_label }}" class="block mt-3 text-primary">{{ field.label }}</label>
+
                 {% render_field field class="w-full px-4 py-2 mt-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary text-primary" %}
                 {% elif field.field.widget.input_type == "checkbox" %}
-                <div class="flex justify-between items-center mt-4">
+                <div class="flex justify-between items-center my-4">
 
-                    <label class="flex items-center text-sm text-tertiary hover:text-on-primary" for="{{ field.id_for_label }} ">
+                    <label class="flex items-center text-sm text-tertiary " for="{{ field.id_for_label }} ">
                         {% render_field field class="mr-1" %}
                         {{ field.label }}
                     </label>
