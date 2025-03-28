@@ -3,7 +3,7 @@ from django.contrib.auth import authenticate, login,logout
 from django.views import View
 from django.contrib.auth import get_user_model
 User = get_user_model()
-from .forms import SignInForm
+from .forms import SignInForm, SignUpForm
 
 # Create your views here.
 def home(request):
@@ -27,12 +27,15 @@ class SignInView(View):
         return render(request, self.template_name, context={'form': SignInForm()})
     
     def post(self, request):
-        username = request.POST.get('username')
-        password = request.POST.get('password')
-        user = authenticate(username=username, password=password)
-        next = request.GET.get('next')
-        if user is not None:
-            login(request=request, user=user)
+        form = SignInForm(request.POST)
+        if form.is_valid():
+            username = form.cleaned_data.get('username')
+            password = form.cleaned_data.get('password')
+            next = request.GET.get('next')
+
+            user = authenticate(username=username, password=password)
+            if user is not None:
+                login(request=request, user=user)
             return redirect(next or 'home')
         return redirect(next or 'signin')
 
@@ -42,7 +45,7 @@ class SignupView(View):
     def get(self, request):
         if request.user.is_authenticated:
             return redirect('home')
-        return render(request=request,template_name=self.template_name)
+        return render(request=request,template_name=self.template_name, context={'form': SignUpForm()})
     def post(self, request):
         username = request.POST.get('username')
         password = request.POST.get('password')
