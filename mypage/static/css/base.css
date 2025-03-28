@@ -60,6 +60,7 @@
     --color-on-primary: #ffffff;
     --color-primary-container: #9cf1f2;
     --color-secondary: #4a6363;
+    --color-on-secondary: #ffffff;
     --color-tertiary: #4c5f7c;
     --color-surface: #f4fbfa;
     --color-on-surface: #161d1d;
@@ -628,6 +629,9 @@
   }
   .text-on-primary {
     color: var(--color-on-primary);
+  }
+  .text-on-secondary {
+    color: var(--color-on-secondary);
   }
   .text-on-surface {
     color: var(--color-on-surface);
