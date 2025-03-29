@@ -17,17 +17,29 @@
             <!-- <p class="text-sm text-gray-500 text-center mt-2">The faster you fill up, the faster you get a ticket</p> -->
             <form class="mt-6" action="{% url 'signin' %}?next={{request.GET.next}}" method="POST">
                 {% csrf_token %}
+                
+                {% if form.non_field_errors %}
+                <ul class="max-w-md space-y-1 text-error list-disc list-inside dark:text-gray-400">
+                    {% for error in form.non_field_errors %}
+                    <li>{{ error }}</li>
+                    {% endfor %}
+                </ul>
 
+                {% endif %}
+                    
                 {% for field in form %}
                 
                 {% if field.field.widget.input_type == "text" or field.field.widget.input_type == "password" %}
+                
+                    
                 <label for="{{ field.id_for_label }}" class="block mt-3 text-primary">{{ field.label }}</label>
-
+                
                 {% render_field field class="w-full px-4 py-2 mt-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary text-primary" %}
+                {{field.errors.as_p}}
                 {% elif field.field.widget.input_type == "checkbox" %}
                 <div class="flex justify-between items-center my-4">
 
-                    <label class="flex items-center text-sm text-tertiary " for="{{ field.id_for_label }} ">
+                    <label class="flex items-center text-sm text-tertiary " id="{{ field.id_for_label }} ">
                         {% render_field field class="mr-1" %}
                         {{ field.label }}
                     </label>
@@ -42,7 +54,7 @@
                 <img src="https://www.svgrepo.com/show/355037/google.svg" class="w-5 h-5 mr-2" alt="Google Logo">
                 Sign In with Google
             </a> -->
-            <p class="mt-6 text-sm text-center text-gray-600">Don't have an account? <a href="{% url 'signup' %}?next={{request.GET.next}}" class="text-black hover:text-on-primary">Sign up</a></p>
+            <p class="mt-6 text-sm text-center text-gray-600">Don't have an account? <a href="{% url 'signup' %}?next={{request.GET.next}}" class="text-primary hover:text-on-primary">Sign up</a></p>
         </div>
         
         <!-- Right Side: Image Section -->

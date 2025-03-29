@@ -40,23 +40,32 @@
     --color-outline-variant: #bec8c8;
 }
 .markdown-content  h1 {
-    @apply text-5xl;
+    @apply text-5xl text-primary;
 }
 
 .markdown-content  h2 {
-    @apply text-4xl;
+    @apply text-4xl text-primary;
 }
 .markdown-content  h3 {
-    @apply text-3xl;
+    @apply text-3xl text-primary;
 }
 .markdown-content  h4 {
-    @apply text-2xl;
+    @apply text-2xl text-primary;
 }
 .markdown-content  h5 {
-    @apply text-xl;
+    @apply text-xl text-primary;
 }
 .markdown-content  h6 {
-    @apply text-lg;
+    @apply text-lg text-primary;
+}
+.markdown-content  p {
+    @apply text-secondary;
+}
+.markdown-content ol {
+    @apply ps-5 mt-2 space-y-1 list-decimal list-inside text-secondary;
+}
+.markdown-content ul  {
+    @apply ps-5 mt-2 space-y-1 list-disc  list-inside text-secondary;
 }
 .markdown-content blockquote {
     @apply m-2 p-4 border-s-4 border-gray-300 bg-gray-50 dark:border-gray-500 dark:bg-gray-800;
@@ -108,4 +117,7 @@
 }
 .dropdown-menu ul li a {
     @apply block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white
+}
+.errorlist {
+    @apply max-w-md space-y-1 text-error list-disc list-inside
 }
